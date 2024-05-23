@@ -12,7 +12,7 @@ namespace DataViewer.DAL
 
         public required string Description { get; set; }
 
-        public int Price { get; set; }
+        public float Price { get; set; }
 
         public float DiscountPercentage { get; set; }
 
@@ -20,7 +20,7 @@ namespace DataViewer.DAL
 
         public int Stock { get; set; }
 
-        public required string Brand { get; set; }
+        public string? Brand { get; set; }
 
         public required string Category { get; set; }
 

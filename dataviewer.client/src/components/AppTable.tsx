@@ -25,10 +25,10 @@ const AppTable = <T,>({
                     <tr key={String(element[keyField])}>
                         {columns.map(column =>
                             <td key={String(column.field)}>
-                                {column.type === 'image' && <img src={String(element[column.field])} alt={titleField ? String(element[titleField]) : undefined} />}
+                                {column.type === 'image' && <img style={{ width: '20rem', height: '20rem' }} src={String(element[column.field])} alt={titleField ? String(element[titleField]) : undefined} />}
                                 {column.type === 'images' && (
                                     <div style={{ display: 'flex' }}>
-                                        {(element[column.field] as Image[]).map((image: Image) => <img key={image.id} src={image.url} alt={titleField ? String(element[titleField]) : undefined} />)}
+                                        {(element[column.field] as Image[]).map((image: Image) => <img style={{ width: '20rem', height: '20rem' }} key={image.id} src={image.url} alt={titleField ? String(element[titleField]) : undefined} />)}
                                     </div>
                                 )}
                                 {column.type !== 'image' && column.type !== 'images' && String(element[column.field])}

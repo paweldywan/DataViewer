@@ -18,7 +18,7 @@ namespace DataViewer.Server
             builder.Services.AddSwaggerGen();
             builder.Services.AddHttpClient();
 
-            var connectionString = builder.Configuration.GetConnectionString("DefauleConnectionString");
+            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
             builder.Services.AddDbContext<DataViewerContext>(o => o.UseSqlServer(connectionString, s => s.MigrationsAssembly("DataViewer.DAL")));
 
