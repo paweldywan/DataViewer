@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import './App.css';
 import AppTable from './components/AppTable';
 import { Image } from './interfaces';
+import { Container } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.css'
 
 interface Product {
     id: number;
@@ -54,10 +55,11 @@ function App() {
         />;
 
     return (
-        <div>
+        <Container fluid>
             <h1 id="tableLabel">Products</h1>
+
             {contents}
-        </div>
+        </Container>
     );
 }
 

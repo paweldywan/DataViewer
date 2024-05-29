@@ -1,4 +1,6 @@
+import { Table } from "reactstrap";
 import { Column, Image } from "../interfaces";
+import AppCarousel from "./AppCarousel";
 
 interface Props<T> {
     columns: Column<T>[];
@@ -14,7 +16,13 @@ const AppTable = <T,>({
     titleField
 }: Props<T>) => {
     return (
-        <table className="table table-striped" aria-labelledby="tableLabel">
+        <Table
+            striped
+            bordered
+            hover
+            responsive
+            dark
+        >
             <thead>
                 <tr>
                     {columns.map(column => <th key={String(column.field)}>{column.title}</th>)}
@@ -25,11 +33,21 @@ const AppTable = <T,>({
                     <tr key={String(element[keyField])}>
                         {columns.map(column =>
                             <td key={String(column.field)}>
-                                {column.type === 'image' && <img style={{ width: '20rem', height: '20rem' }} src={String(element[column.field])} alt={titleField ? String(element[titleField]) : undefined} />}
+                                {column.type === 'image' && (
+                                    <img
+                                        src={String(element[column.field])}
+                                        alt={titleField ? String(element[titleField]) : undefined}
+                                        style={{ width: '20rem', height: '20rem' }}
+                                    />
+                                )}
                                 {column.type === 'images' && (
-                                    <div style={{ display: 'flex' }}>
-                                        {(element[column.field] as Image[]).map((image: Image) => <img style={{ width: '20rem', height: '20rem' }} key={image.id} src={image.url} alt={titleField ? String(element[titleField]) : undefined} />)}
-                                    </div>
+                                    <AppCarousel
+                                        items={(element[column.field] as Image[]).map((image: Image) => ({
+                                            src: image.url,
+                                            altText: titleField ? String(element[titleField]) : undefined
+                                        }))}
+                                        style={{ width: '20rem', height: '20rem' }}
+                                    />
                                 )}
                                 {column.type !== 'image' && column.type !== 'images' && String(element[column.field])}
                             </td>
@@ -37,7 +55,7 @@ const AppTable = <T,>({
                     </tr>
                 )}
             </tbody>
-        </table>
+        </Table>
     );
 }
 

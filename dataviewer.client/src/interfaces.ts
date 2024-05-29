@@ -8,3 +8,10 @@ export interface Image {
     id: number;
     url: string;
 }
+
+export interface AppCarouselItem {
+    src: string,
+    altText?: string,
+    captionHeader?: string,
+    captionText?: string
+}
