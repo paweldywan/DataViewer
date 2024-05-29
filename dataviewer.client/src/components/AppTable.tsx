@@ -34,11 +34,13 @@ const AppTable = <T,>({
                         {columns.map(column =>
                             <td key={String(column.field)}>
                                 {column.type === 'image' && (
-                                    <img
-                                        src={String(element[column.field])}
-                                        alt={titleField ? String(element[titleField]) : undefined}
-                                        style={{ maxWidth: '20rem', maxHeight: '20rem' }}
-                                    />
+                                    <div style={{ width: '20rem', height: '20rem' }}>
+                                        <img
+                                            src={String(element[column.field])}
+                                            alt={titleField ? String(element[titleField]) : undefined}
+                                            className="img-fluid"
+                                        />
+                                    </div>
                                 )}
                                 {column.type === 'images' && (
                                     <AppCarousel
@@ -46,7 +48,7 @@ const AppTable = <T,>({
                                             src: image.url,
                                             altText: titleField ? String(element[titleField]) : undefined
                                         }))}
-                                        style={{ maxWidth: '20rem', maxHeight: '20rem' }}
+                                        style={{ width: '20rem', height: '20rem' }}
                                     />
                                 )}
                                 {column.type !== 'image' && column.type !== 'images' && String(element[column.field])}

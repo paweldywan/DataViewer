@@ -55,11 +55,13 @@ const AppCarousel = ({
             onExited={() => setAnimating(false)}
             key={item.src}
         >
-            <img
-                src={item.src}
-                alt={item.altText}
-                style={style}
-            />
+            <div style={style}>
+                <img
+                    src={item.src}
+                    alt={item.altText}
+                    className="img-fluid"
+                />
+            </div>
 
             {item.captionText &&
                 <CarouselCaption
