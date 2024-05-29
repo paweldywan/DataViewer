@@ -1,22 +1,15 @@
-import { useEffect, useState } from 'react';
-import AppTable from './components/AppTable';
-import { Image } from './interfaces';
-import { Container } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.css'
+import {
+    useEffect,
+    useState
+} from 'react';
 
-interface Product {
-    id: number;
-    title: string;
-    description: string;
-    price: number;
-    discountPercentage: number;
-    rating: number;
-    stock: number;
-    brand: string;
-    category: string;
-    thumbnail: string;
-    imagesCollection: Image[];
-}
+import AppTable from './components/AppTable';
+
+import { Product } from './interfaces';
+
+import { Container } from 'reactstrap';
+
+import 'bootstrap/dist/css/bootstrap.css'
 
 function App() {
     const [data, setData] = useState<Product[]>();
@@ -56,7 +49,7 @@ function App() {
 
     return (
         <Container fluid>
-            <h1 id="tableLabel">Products</h1>
+            <h1>Products</h1>
 
             {contents}
         </Container>
