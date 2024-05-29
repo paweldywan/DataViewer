@@ -58,13 +58,14 @@ const AppCarousel = ({
             <img
                 src={item.src}
                 alt={item.altText}
-                className="img-fluid"
+                style={style}
             />
 
-            <CarouselCaption
-                captionText={item.captionText}
-                captionHeader={item.captionHeader}
-            />
+            {item.captionText &&
+                <CarouselCaption
+                    captionText={item.captionText}
+                    captionHeader={item.captionHeader}
+                />}
         </CarouselItem>
     ));
 

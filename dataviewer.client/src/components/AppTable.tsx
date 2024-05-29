@@ -37,7 +37,7 @@ const AppTable = <T,>({
                                     <img
                                         src={String(element[column.field])}
                                         alt={titleField ? String(element[titleField]) : undefined}
-                                        style={{ width: '20rem', height: '20rem' }}
+                                        style={{ maxWidth: '20rem', maxHeight: '20rem' }}
                                     />
                                 )}
                                 {column.type === 'images' && (
@@ -46,7 +46,7 @@ const AppTable = <T,>({
                                             src: image.url,
                                             altText: titleField ? String(element[titleField]) : undefined
                                         }))}
-                                        style={{ width: '20rem', height: '20rem' }}
+                                        style={{ maxWidth: '20rem', maxHeight: '20rem' }}
                                     />
                                 )}
                                 {column.type !== 'image' && column.type !== 'images' && String(element[column.field])}
