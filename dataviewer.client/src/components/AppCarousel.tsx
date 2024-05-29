@@ -15,7 +15,7 @@ import {
 
 interface Props {
     items: AppCarouselItem[];
-    style?: CSSProperties | undefined
+    style?: CSSProperties
 }
 
 const AppCarousel = ({
