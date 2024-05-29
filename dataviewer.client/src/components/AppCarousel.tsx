@@ -74,8 +74,8 @@ const AppCarousel = ({
                 activeIndex={activeIndex}
                 next={next}
                 previous={previous}
-                {...other}
                 dark
+                {...other}
             >
                 <CarouselIndicators
                     items={items}
