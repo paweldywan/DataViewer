@@ -20,7 +20,7 @@ namespace DataViewer.Server
 
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-            builder.Services.AddDbContext<DataViewerContext>(o => o.UseSqlServer(connectionString, s => s.MigrationsAssembly("DataViewer.DAL")));
+            builder.Services.AddNpgsql<DataViewerContext>(connectionString);
 
             builder.Services.AddScoped<DataViewerSeeder>();
 

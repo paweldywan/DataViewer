@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataViewer.Server", "DataViewer.Server\DataViewer.Server.csproj", "{780EC9A3-6E5B-46E2-AF73-FE8DEE9D6E8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataViewer.Server", "DataViewer.Server\DataViewer.Server.csproj", "{780EC9A3-6E5B-46E2-AF73-FE8DEE9D6E8D}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "dataviewer.client", "dataviewer.client\dataviewer.client.esproj", "{79229AC6-FB9D-4756-BD61-27F6258C65D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataViewer.DAL", "DataViewer.DAL\DataViewer.DAL.csproj", "{A577B4FF-D70F-4DEE-86A3-0F27C3223613}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataViewer.DAL", "DataViewer.DAL\DataViewer.DAL.csproj", "{A577B4FF-D70F-4DEE-86A3-0F27C3223613}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
